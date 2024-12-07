@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+body::-webkit-scrollbar{
+	display: none;                    /* hide scrollbar for chrome,safari & opera */
+}
+html{
+	scrollbar-width: none;           /* hide scrollbar for firefox */
+}
+body{
+	-ms-overflow-style: none;        /* hide scrollbar for edge & IE */
+}
+.container{
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+    overflow: hidden;
+    background: url(img/bg.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.input-box{
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    min-height: 150px;
+    color: #CCCCCC;
+    padding: 20px;
+    margin: 20px 0;
+    outline: none;
+    border-radius: 5px;
+}
+.Notes-Input img{
+    position: absolute;
+    width: 20px;
+    height: 15px;
+    bottom: 15px;
+    cursor: pointer;
+    margin-bottom: -10px;
+    margin-left: 476px;
+}
+.Notes-Input {
+    position: relative;
+    max-width: 500px;
+}
+.wrapperctn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.wrapper{
+    position: relative;
+    flex-basis: 50%;
+    align-items: center;
+    width: 60%;
+    margin-top: 75px;
+    box-shadow: 0px 0px 10px 0px #464646;
+    border-radius: 10px;
+    background: #202022;
+    color: #000;
+    padding: 20px 20px 20px;
+    display: none;
+}
+.wrapper label{
+    color: #CCCCCC;
+}
+.wrapper :where(textarea, input, select, button){
+    width: 100%;
+    outline: none;
+    border: none;
+    font-size: 17px;
+    border-radius: 5px;
+}
+.wrapper textarea{
+    height: 200px;
+    resize: none;
+    padding: 8px 13px;
+    background: #202022;
+    color: #B5B5B5;
+    border: 1px solid #464646;
+    box-shadow: 0px 0px 2px 1px #464646;
+}
+.wrapper .file-option{
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+.file-option .option{
+    width: 47%;
+}
+.option :where(input, .select-menu){
+    height:50px;
+    padding: 0 15px;
+    margin-top: 6px;
+    border-radius: 5px;
+    background: #202022;
+    color: #B5B5B5;
+    border: 1px solid #464646;
+    box-shadow: 0px 0px 2px 1px #464646;
+}
+.option .select-menu select{
+    height: 48px;
+    background: #202022;
+    color: #B5B5B5;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.wrapper .save-btn{
+    color: #CCCCCC;
+    margin-top: 20px;
+    border-radius: 20px;
+    padding: 16px 0;
+    cursor: pointer;
+    opacity: 0.1;
+    pointer-events: none;
+    justify-content: center;
+    box-shadow: 0px 0px 10px 0px #464646,
+    inset 0px 0px 1px 1px #464646;
+    background: linear-gradient(-225deg,#22222234, #202022);
+    transition: 0.9s;
+}
+.wrapper .save-btn:hover{
+    box-shadow: 0px 0px 10px 2px #464646,
+    inset 0px 0px 1px 3px #464646;
+}
+.wrapper textarea:valid ~ .save-btn{
+    opacity: 1;
+    transition: 0.9s;
+    pointer-events: auto;
+}
+.notes-container{
+    position: absolute;
+    background: url(img/bg.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    padding: 20px;
+    padding-left: 100px;
+}
+.notes-container p{
+    padding: 20px;
+    background: #202022;
+    border: 2px solid #464646;
+}
+.navbar{
+    padding-left: 20px;
+    width: 100%;
+    display: flex;
+    background: #202022;
+    align-items: center;
+}
+.navbar p{
+    font-size: 25px;
+    color: #bfbfbf;
+}
+.navbar .head{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.logo{
+    filter: grayscale(60%);
+    width: 40px;
+    cursor: pointer;
+    margin: 10px 0;
+}
+.menu-icon{
+    filter: grayscale(60%);
+    width: 25px;
+    cursor: pointer;
+    margin-right: 18px;
+    display: none;
+}
+nav{
+    flex: 1;
+    text-align: right;
+    margin-bottom: 22px;
+}
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin-right: 30px;
+}
+nav ul li a{
+    text-decoration: none;
+    color: #bfbfbf;
+    font-size: 16px;
+    cursor: pointer;
+}
+nav ul li a:hover{
+    color: #fff;
+}
+@media only screen and (max-width:700px){ 
+    nav ul{
+        width: 100%;
+        background: #202022;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        z-index: 2;
+    }
+    nav ul li{
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    nav ul li a{
+        color: #bfbfbf;
+    }
+    .menu-icon{
+        display: block;
+    }
+    #menuList{
+        overflow: hidden;
+        transition: 0.5s;
+    }
+    .Notes-Input img{
+        margin-left: 4px;
+    }
+    .notes-container{
+        padding-left: 20px;
+    }
+}
+@media only screen and (max-width:425px){
+    .wrapper{
+        flex-basis: 80%;
+    }
+}
